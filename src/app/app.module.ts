@@ -11,8 +11,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './Admin/admin/admin.module';
-import { CitesComponent } from './Admin/cites/cites.component';
-import { UpdatecityComponent } from './Admin/updatecity/updatecity.component';
+import { UserModule } from './User/user/user.module';
+
+
+
+
+
 
 
 //import { AdminModuleModule } from './Admin/admin-module/admin-module.module';
@@ -22,12 +26,13 @@ import { UpdatecityComponent } from './Admin/updatecity/updatecity.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-
-    CitesComponent,
-      UpdatecityComponent,
-
-
-
+    //DashbordUserComponent,
+    //HireComponent,
+    //ProjectComponent,
+    //FreelancerComponent,
+   // WorkComponent,
+    //CitesComponent,
+    //UpdatecityComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,8 @@ import { UpdatecityComponent } from './Admin/updatecity/updatecity.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AdminModule
+    AdminModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
