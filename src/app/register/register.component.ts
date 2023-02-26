@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from '../type/User';
 import { RgisterService } from './rgister.service';
 
@@ -12,7 +13,7 @@ import { RgisterService } from './rgister.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private bulider:FormBuilder,private reg:RgisterService) { }
+  constructor(private bulider:FormBuilder,private reg:RgisterService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -28,8 +29,11 @@ export class RegisterComponent implements OnInit {
   registers(){
     if(this.registerForm.valid){
       let user={name:this.registerForm.controls['name'].value,email:this.registerForm.controls['email'].value,password:this.registerForm.controls['password'].value,role:'USER'};
-      this.reg.registerForm(user).subscribe((data)=>{
-          console.log(data);
+      this.reg.registerForm(user).subscribe((data:any)=>{
+         let d=data;
+         if(d.message=="Register done"){
+           this.router.navigate(['login'])
+         }
       },(error:HttpErrorResponse)=>{
             console.log(error.message)
       })

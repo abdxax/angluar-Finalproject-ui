@@ -13,19 +13,44 @@
             <form [formGroup]="registerForm" (ngSubmit)="registers()">
                 <div class="form-group">
                     <label>الاسم</label>
-                    <input type="text" class="form-control" formControlName="name" />
+                    <input type="text" class="form-control" formControlName="name"  />
+
+                    <div *ngIf="registerForm.controls['name'].invalid && (registerForm.controls['name'].dirty || registerForm.controls['name'].touched)" class="alert">
+                      <div *ngIf="registerForm.controls['name'].errors" class="alert alert-danger">
+                        الرجاء ادخال الاسم
+                    </div>
+                  </div>
+
                 </div>
                 <div class="form-group">
                     <label>البريد الالكتروني</label>
                     <input type="email" class="form-control" formControlName="email"/>
+
+                    <div *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)" class="alert">
+                      <div *ngIf="registerForm.controls['email'].errors" class="alert alert-danger">
+                         الرجاء ادخال البريد الالكتروني
+                      </div>
+                  </div>
+
                 </div>
                 <div class="form-group">
                     <label>كلمة المرور</label>
                     <input type="password" class="form-control" formControlName="password"/>
+
+                    <div *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)" class="alert">
+                      <div *ngIf="registerForm.controls['password'].errors" class="alert alert-danger">
+                            الرجاء ادخال كلمة المرور و ان تكون من 6 خانات و اكثر
+                      </div>
+                  </div>
+
+
                 </div>
                 <div class="form-group">
                     <label>اعادة كلمة المرور </label>
                     <input type="password" class="form-control" />
+
+
+
                 </div>
                 <div class="form-group mt-2 text-center">
                     <label></label>
