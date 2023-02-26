@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   top: 15%;
-  margin: auto;  
+  margin: auto;
 }
 </style>
 <div class="container" dir="rtl">
@@ -15,17 +15,17 @@
 
                 </div>
                 <div class="card-body">
-                    <form>
-                        
+                    <form [formGroup]="loginForm" (submit)="login()">
+
                         <div class="form-group">
                             <label>البريد الالكتروني</label>
-                            <input type="email" class="form-control" />
+                            <input type="email" class="form-control" formControlName="email" />
                         </div>
                         <div class="form-group">
                             <label>كلمة المرور</label>
-                            <input type="password" class="form-control" />
+                            <input type="password" class="form-control" formControlName="password"/>
                         </div>
-                        
+
                         <div class="form-group mt-2 text-center">
                             <label></label>
                             <input type="submit" class="btn btn-info  "  value="تسجيل دخول" />
@@ -33,7 +33,7 @@
                     </form>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
