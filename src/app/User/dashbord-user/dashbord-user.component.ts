@@ -8,6 +8,7 @@ import { User } from 'src/app/type/User';
 })
 export class DashbordUserComponent implements OnInit {
   user:any=localStorage.getItem("user");
+  title="Freelancer";
   userInfo:User=JSON.parse(this.user)
   constructor() { }
 

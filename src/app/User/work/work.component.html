@@ -1,1 +1,17 @@
-<p>work works!</p>
+<h3>الأعمال السابقة</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>العنوان</th>
+      <th>الوصف</th>
+      <th>خيارات</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let work of works">
+    <tr>
+      <td>{{work.title}}</td>
+      <td>{{work.description}}</td>
+      <td>c</td>
+    </tr>
+  </tbody>
+</table>
