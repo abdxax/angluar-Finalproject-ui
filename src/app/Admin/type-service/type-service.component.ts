@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { data } from 'jquery';
+
 import { TypeServicesService } from '../type-services.service';
 
 @Component({
