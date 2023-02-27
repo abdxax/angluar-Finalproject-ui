@@ -15,7 +15,7 @@
 
                 </div>
                 <div class="card-body">
-                    <form [formGroup]="loginForm" (submit)="login()">
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
 
                         <div class="form-group">
                             <label>البريد الالكتروني</label>
@@ -28,7 +28,7 @@
 
                         <div class="form-group mt-2 text-center">
                             <label></label>
-                            <input type="submit" class="btn btn-info  "  value="تسجيل دخول" />
+                            <input type="submit" class="btn btn-info"  value="تسجيل دخول" />
                         </div>
                     </form>
                 </div>

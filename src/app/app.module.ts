@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './Admin/admin/admin.module';
 import { UserModule } from './User/user/user.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -42,7 +44,9 @@ import { UserModule } from './User/user/user.module';
     ReactiveFormsModule,
     HttpClientModule,
     AdminModule,
-    UserModule
+    UserModule,
+    BrowserAnimationsModule,
+   // ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

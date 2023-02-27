@@ -32,10 +32,28 @@
           <td></td>
           <td>{{ c.cityName }}</td>
           <td><a href="admin/updateCity/{{ c.id }}" class="btn btn-info">تعديل</a></td>
-          <td><!--<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
             حذف
-          </button>-->
-        <button class="btn btn-danger" (click)="deleteCity(c.id)">حذف</button>
+          </button>
+          <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"  [hidden]="IsmodelShow">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">حذف مدينة</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        هل متاكد من حذف مدينة "{{c.cityName}}"
+      </div>
+      <div class="modal-footer text-center" dir="rtl">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
+        <button type="button" class="btn btn-primary" (click)="deleteCity(c.id)">حذف</button>
+      </div>
+    </div>
+  </div>
+</div>
+       <!-- <button class="btn btn-danger" (click)="deleteCity(c.id)">حذف</button>-->
         </td>
         </tr>
       </tbody>

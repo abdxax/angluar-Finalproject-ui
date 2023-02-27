@@ -46,7 +46,7 @@ export class CitesService {
     return this.http.post("http://localhost:8080/api/v1/admin/city/addCity",city,{headers:heade})
    }
 
-   delete(cityId:any,tokien:any){
+   delete(cityId:any,tokien:any):Observable<Object>{
     let auth="Bearer "+tokien;
     let heade={
      Authorization:auth
