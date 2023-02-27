@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
+
 //import { AdminModuleModule } from './Admin/admin-module/admin-module.module';
 
 @NgModule({
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+   // TypeServiceComponent,
     //DashbordUserComponent,
     //HireComponent,
     //ProjectComponent,

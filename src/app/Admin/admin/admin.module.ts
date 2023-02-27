@@ -7,6 +7,7 @@ import { DashbordComponent } from '../dashbord/dashbord.component';
 import { CitesComponent } from '../cites/cites.component';
 import { UpdatecityComponent } from '../updatecity/updatecity.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TypeServiceComponent } from '../type-service/type-service.component';
 
 
 
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
    // DashbordComponent
    DashbordComponent,
    CitesComponent,
-   UpdatecityComponent
+   UpdatecityComponent,
+   TypeServiceComponent
   ],
   imports: [
     CommonModule,

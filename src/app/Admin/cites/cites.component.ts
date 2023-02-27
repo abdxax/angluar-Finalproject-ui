@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CitesService } from '../cites.service';
-
+declare var window: any;
 @Component({
   selector: 'app-cites',
   templateUrl: './cites.component.html',
@@ -11,12 +11,16 @@ import { CitesService } from '../cites.service';
 })
 export class CitesComponent implements OnInit {
  city:any=[];
+ formModal:any;
  tokien=localStorage.getItem("tokin");
  IsmodelShow=false;
   constructor(private cityService:CitesService,private router:Router,private bulider:FormBuilder) { }
 
   ngOnInit(): void {
     this.loadCity();
+    this.formModal = new window.bootstrap.Modal(
+      document.getElementById('staticBackdrop')
+    );
   }
 
   addCity=this.bulider.group({
@@ -37,10 +41,12 @@ export class CitesComponent implements OnInit {
    this.cityService.delete(cityId,this.tokien).subscribe((data)=>{
    // this.router.navigate(['admin/city'])
     this.loadCity()
+    this.close()
 
    },(error)=>{
     //this.router.navigate(['admin/city'])
     this.loadCity()
+    this.close()
    })
   }
 
@@ -52,8 +58,11 @@ export class CitesComponent implements OnInit {
   }
 
   close() {
-    this.IsmodelShow=true;// set false while you need open your model popup
-   // do your more code
+    //this.formModal.
+  //show
+  //let x=document.getElementById('staticBackdrop')?.classList.remove('show');
+
+
 }
 
 }
