@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   let user={email:this.loginForm.get("email")?.value,password:this.loginForm.get('password')?.value};
    this.loginUser.login(user).subscribe((data:any)=>{
     console.log(data)
-    let user:User={name:data.user.name,email:data.user.email,password:"",role:data.user.role};
+    let user:User={id:data.user.id,name:data.user.name,email:data.user.email,password:"",role:data.user.role};
     let tokin=data.message;
     localStorage.setItem("user",JSON.stringify(user));
     localStorage.setItem("tokin",tokin);

@@ -1,1 +1,33 @@
-<p>{{ profile.profile.city.cityName}}</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-11" >
+      <div>
+        <h3 class="" >المعلومات الشخصية</h3>
+      </div>
+      <div class="information">
+        <p>الاسم : {{ profile.user.name }}</p>
+        <p>البريد الالكتروني : {{ profile.user.email }}</p>
+
+        <p>رقم التواصل  : {{ profile.profile.phone }}</p>
+
+        <p>المدينة : {{ profile.profile.city.cityName }}</p>
+
+
+        <a href="user/infoUpdate/{{ profile.user.id }}" class="btn btn-secondary">تحديث البيانات الشخصية</a>
+      </div>
+      <div *ngIf="profile.freelancer==null" class="mt-2">
+        <p>للانضمام كا  مستقل :</p>
+        <a href="" class="btn btn-info">انظم كا مستقل </a>
+      </div>
+    </div>
+
+
+    <!--<div *ngIf="profile==null">
+      <h3>عذر لا يوجد ملف شخصي الرجاء انشاء ملف شخصي </h3>
+      <p>{{userLogin.id}}</p>
+      <a href="user/create/{{ulogin.id}}" class="btn btn-secondary">انشاء ملف شخصي </a>
+    </div>-->
+
+  </div>
+</div>

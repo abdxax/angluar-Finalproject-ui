@@ -2,12 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
  basUrl="http://localhost:8080/api/v1/user/"
   constructor(private hhtp:HttpClient) { }
+
 
   getprofile(tokien:any):Observable<Object>{
     let auth="Bearer "+tokien;
@@ -24,4 +27,33 @@ export class UserService {
     }
    return this.hhtp.post("http://localhost:8080/api/v1/user/profile/addprofile",profile,{headers:heade})
   }
+
+
+
+  getWorks(tokien:any):Observable<Object>{
+    let auth="Bearer "+tokien;
+    let head={
+      Authorization:auth
+    }
+    return  this.hhtp.get("http://localhost:8080/api/v1/user/work",{ headers: head })
+
+  }
+
+  getCitys(tokien:any):Observable<Object>{
+    let auth="Bearer "+tokien;
+    let head={
+      Authorization:auth
+    }
+    return  this.hhtp.get("http://localhost:8080/api/v1/user/profile/getCity",{ headers: head })
+  }
+
+  updateInfo(tokien:any,user:any):Observable<Object>{
+    let auth="Bearer "+tokien;
+    let head={
+      Authorization:auth
+    }
+    return this.hhtp.put("http://localhost:8080/api/v1/user/profile/updateInfo",user,{headers:head})
+  }
+
+
 }

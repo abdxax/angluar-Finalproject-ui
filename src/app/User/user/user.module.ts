@@ -8,6 +8,7 @@ import { ProjectComponent } from '../project/project.component';
 import { UserRoutingModule } from './user-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashbordUserComponent } from '../dashbord-user/dashbord-user.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -22,6 +23,7 @@ import { DashbordUserComponent } from '../dashbord-user/dashbord-user.component'
   ],
   imports: [
     CommonModule,
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     UserRoutingModule

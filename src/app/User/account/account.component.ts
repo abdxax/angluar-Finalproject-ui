@@ -15,16 +15,17 @@ export class AccountComponent implements OnInit {
   ngOnInit(): void {
     let tok=localStorage.getItem("tokin");
     this.tokien=tok;
-    this.user.getprofile(this.tokien).subscribe((data:any)=>{
+    console.log("tokien "+this.tokien)
+    this.user.getprofile(tok).subscribe((data:any)=>{
         console.log(data)
         this.profile=data
-    },(error:HttpErrorResponse)=>{
-      console.log(error.message)
     })
 
-    this.user.addProfile({cityId:1,phone:'0568508989'},this.tokien).subscribe((data:any)=>{
+    console.log("profile "+this.profile)
+
+   /* this.user.addProfile({cityId:1,phone:'0568508989'},this.tokien).subscribe((data:any)=>{
       console.log(data)
-    })
+    })*/
   }
 
 }

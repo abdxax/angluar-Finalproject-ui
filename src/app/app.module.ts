@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './Admin/admin/admin.module';
 import { UserModule } from './User/user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InfoUpdateComponent } from './User/info-update/info-update.component';
+import { CreateProfileComponent } from './User/create-profile/create-profile.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -29,6 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    InfoUpdateComponent,
+    CreateProfileComponent,
    // TypeServiceComponent,
     //DashbordUserComponent,
     //HireComponent,
@@ -39,6 +44,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     //UpdatecityComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
