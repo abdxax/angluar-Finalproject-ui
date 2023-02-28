@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InfoUpdateComponent } from './User/info-update/info-update.component';
 import { CreateProfileComponent } from './User/create-profile/create-profile.component';
 import { CommonModule } from '@angular/common';
+import { OfferFreelancerComponent } from './User/offer-freelancer/offer-freelancer.component';
+import { ShowOfferComponent } from './User/show-offer/show-offer.component';
 
 
 
@@ -34,6 +36,8 @@ import { CommonModule } from '@angular/common';
     RegisterComponent,
     InfoUpdateComponent,
     CreateProfileComponent,
+    OfferFreelancerComponent,
+    ShowOfferComponent,
    // TypeServiceComponent,
     //DashbordUserComponent,
     //HireComponent,

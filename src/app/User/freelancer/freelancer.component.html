@@ -1,1 +1,26 @@
-<p>freelancer works!</p>
+<div class="container">
+  <div class="row">
+    <div classs="col-md-10">
+      <form [formGroup]="formFree" (ngSubmit)="saveFreelancer()">
+        <div class="form-group">
+          <label>الخدمة</label>
+          <select class="form-select" formControlName="serviceId">
+            <option *ngFor="let serv of service" value="{{serv.id}}">{{serv.serviceType}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>وصف الخدمة</label>
+          <textarea class="form-control" rows="6" formControlName="describe"></textarea>
+        </div>
+        <div class="form-group ">
+          <label>الطاقة الاستعابية </label>
+          <input type="number" class="form-control" formControlName="capcity">
+        </div>
+        <div class="form-group text-center mt-2">
+          <label></label>
+          <input type="submit" class="btn btn-info" value="حفظ">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

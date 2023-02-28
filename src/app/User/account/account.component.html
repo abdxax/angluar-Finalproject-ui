@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-11" >
+    <div class="col-md-11"  *ngIf="profile!=null">
       <div>
         <h3 class="" >المعلومات الشخصية</h3>
       </div>
@@ -18,16 +18,16 @@
       </div>
       <div *ngIf="profile.freelancer==null" class="mt-2">
         <p>للانضمام كا  مستقل :</p>
-        <a href="" class="btn btn-info">انظم كا مستقل </a>
+        <a href="user/freelancer" class="btn btn-info">انظم كا مستقل </a>
       </div>
     </div>
 
 
-    <!--<div *ngIf="profile==null">
+    <div *ngIf="profile==null">
       <h3>عذر لا يوجد ملف شخصي الرجاء انشاء ملف شخصي </h3>
-      <p>{{userLogin.id}}</p>
-      <a href="user/create/{{ulogin.id}}" class="btn btn-secondary">انشاء ملف شخصي </a>
-    </div>-->
+
+      <a href="user/create/{{userLogin.id}}" class="btn btn-secondary">انشاء ملف شخصي </a>
+    </div>
 
   </div>
 </div>

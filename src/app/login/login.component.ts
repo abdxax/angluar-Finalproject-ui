@@ -13,7 +13,7 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  unauthenticated:boolean=false;
   constructor(private bulider:FormBuilder,private loginUser:LoginService,private router:Router,private notfi:NotificationService) { }
 
   ngOnInit(): void {
@@ -41,6 +41,9 @@ export class LoginComponent implements OnInit {
     }
     //alert (x)
    },(error:HttpErrorResponse)=>{
+    if(error.status==403){
+      this.loginForm.setErrors({ unauthenticated: true });
+    }
     console.log(error)
    })
   }

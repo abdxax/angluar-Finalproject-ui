@@ -20,7 +20,11 @@ export class CreateProfileComponent implements OnInit {
   ngOnInit(): void {
     this.tokien=localStorage.getItem("tokin");
     this.id=this.rout.snapshot.paramMap.get('id');
-    this.getclityList()
+    this.user.getCitys(this.tokien).subscribe((data:any)=>{
+      this.cityList=data;
+      console.log(data)
+    })
+    //this.getclityList()
   }
 
   createProfile=this.bulider.group({
@@ -30,7 +34,9 @@ export class CreateProfileComponent implements OnInit {
   })
 
   getclityList(){
-    this.user.getCitys(this.tokien).subscribe((data:any)=>{
+    let t=localStorage.getItem("tokin");
+    console.log(t)
+    this.user.getCitys(t).subscribe((data:any)=>{
       this.cityList=data;
       console.log("d"+data)
       console.log("cityss"+this.cityList)
@@ -43,6 +49,9 @@ export class CreateProfileComponent implements OnInit {
       this.user.addProfile(profile,this.tokien).subscribe((resp)=>{
         console.log(resp)
       },(error:HttpErrorResponse)=>{
+        if(error.status==200){
+          this.router.navigate(['admin/account'])
+        }
         console.log(error.status)
       })
 

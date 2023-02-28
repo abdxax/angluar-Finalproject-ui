@@ -55,5 +55,29 @@ export class UserService {
     return this.hhtp.put("http://localhost:8080/api/v1/user/profile/updateInfo",user,{headers:head})
   }
 
+  getSerivceType(tokien:any):Observable<Object>{
+    let auth="Bearer "+tokien;
+    let head={
+      Authorization:auth
+    }
+    return this.hhtp.get("http://localhost:8080/api/v1/user/service/details/getServiceType",{headers:head})
+  }
+
+  createFreelancer(tokien:any,freelancer:any):Observable<Object>{
+    let auth="Bearer "+tokien;
+    let head={
+      Authorization:auth
+    }
+    return this.hhtp.post("http://localhost:8080/api/v1/user/freelancer/addFreelancerWithService",freelancer,{headers:head})
+  }
+
+  getService(tokien:any,serviceId:any):Observable<Object>{
+    let auth="Bearer "+tokien;
+    let head={
+      Authorization:auth
+    }
+    return this.hhtp.get(`http://localhost:8080/api/v1/user/service/details/getServiceByType/${serviceId}`,{headers:head})
+  }
+
 
 }

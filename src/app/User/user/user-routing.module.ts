@@ -6,7 +6,9 @@ import { DashbordUserComponent } from '../dashbord-user/dashbord-user.component'
 import { FreelancerComponent } from '../freelancer/freelancer.component';
 import { HireComponent } from '../hire/hire.component';
 import { InfoUpdateComponent } from '../info-update/info-update.component';
+import { OfferFreelancerComponent } from '../offer-freelancer/offer-freelancer.component';
 import { ProjectComponent } from '../project/project.component';
+import { ShowOfferComponent } from '../show-offer/show-offer.component';
 import { WorkComponent } from '../work/work.component';
 
 
@@ -23,7 +25,9 @@ const routes: Routes = [
          {path:'account',component:AccountComponent},
          {path:'freelancer',component:FreelancerComponent},
          {path:"infoUpdate/:id",component:InfoUpdateComponent},
-         {path:"create/:id",component:CreateProfileComponent}
+         {path:"create/:id",component:CreateProfileComponent},
+         {path:"offer",component:OfferFreelancerComponent},
+         {path:"show/:id",component:ShowOfferComponent}
 
         ]
     }
