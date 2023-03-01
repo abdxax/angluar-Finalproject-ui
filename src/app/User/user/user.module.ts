@@ -8,6 +8,7 @@ import { ProjectComponent } from '../project/project.component';
 import { UserRoutingModule } from './user-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashbordUserComponent } from '../dashbord-user/dashbord-user.component';
+import {WorkViewComponent} from "../work/work-view/work-view.component";
 
 
 
@@ -18,7 +19,8 @@ import { DashbordUserComponent } from '../dashbord-user/dashbord-user.component'
     HireComponent,
     WorkComponent,
     FreelancerComponent,
-    ProjectComponent
+    ProjectComponent,
+    WorkViewComponent
   ],
   imports: [
     CommonModule,

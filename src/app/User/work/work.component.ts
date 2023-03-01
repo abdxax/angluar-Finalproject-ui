@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService} from "../user.service";
+import {Component, Input, OnInit} from '@angular/core';
+// import { } from "../user.service";
+import {WorkService} from "./work.service";
 import {CitesService} from "../../Admin/cites.service";
 import {Router} from "@angular/router";
 
@@ -9,8 +10,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./work.component.css']
 })
 export class WorkComponent implements OnInit {
+  @Input() item:any;
 
-  constructor(private userService:UserService,private router:Router) {
+  constructor(private workService:WorkService,private router:Router) {
     this.getWorks();
   }
 
@@ -21,7 +23,7 @@ export class WorkComponent implements OnInit {
   token=localStorage.getItem("tokin");
   getWorks(){
 
-    this.userService.getWorks(this.token).subscribe((data:any)=>{
+    this.workService.getWorks(this.token).subscribe((data:any)=>{
       this.works=data
       console.log(this.works)
     },(error)=>{

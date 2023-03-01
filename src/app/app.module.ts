@@ -11,7 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './Admin/admin/admin.module';
-import { UserModule } from './User/user/user.module';
+import {UserModule} from "./User/user/user.module";
+import { WorkViewComponent } from './User/work/work-view/work-view.component';
 
 
 
@@ -26,6 +27,7 @@ import { UserModule } from './User/user/user.module';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+
     //DashbordUserComponent,
     //HireComponent,
     //ProjectComponent,
@@ -42,7 +44,8 @@ import { UserModule } from './User/user/user.module';
     ReactiveFormsModule,
     HttpClientModule,
     AdminModule,
-    UserModule
+    UserModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

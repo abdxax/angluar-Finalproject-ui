@@ -6,6 +6,7 @@ import { FreelancerComponent } from '../freelancer/freelancer.component';
 import { HireComponent } from '../hire/hire.component';
 import { ProjectComponent } from '../project/project.component';
 import { WorkComponent } from '../work/work.component';
+import {WorkViewComponent} from "../work/work-view/work-view.component";
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
          {path:'project',component:ProjectComponent},
          {path:'hire',component:HireComponent},
          {path:'account',component:AccountComponent},
-         {path:'freelancer',component:FreelancerComponent}
+         {path:'freelancer',component:FreelancerComponent},
+         {path:'work/view/:id',component:WorkViewComponent}
 
         ]
     }
